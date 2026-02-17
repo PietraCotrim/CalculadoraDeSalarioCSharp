@@ -9,9 +9,10 @@ namespace Calculadora
         static void Main(string[] args)
         {
             CultureInfo cultura = CultureInfo.InvariantCulture;
-
+            WriteLine("");
             WriteLine("Olá, seja bem vindo(a)");
             WriteLine("Para que o calculo seja possivel, será necessario algumas informações:");
+            WriteLine("");
             WriteLine("1) Qual o valor da sua hora?");
             double vrHora = double.Parse(ReadLine(), cultura);
             WriteLine("2) Quantas horas foram trabalhadas?");
@@ -134,18 +135,28 @@ namespace Calculadora
             
             /*      Liquido          */
             double liquido = Bruto - INSS - IRF - pensao;
+            double adiantamento = liquido * 40 / 100;
+            double pagamento = liquido * 60 / 100;
 
             /*      Retorno          */
+            WriteLine("");
             WriteLine($"Salario base: {salarioBase}");
+            WriteLine($"Salario bruto: {Bruto}");
+            WriteLine($"Salario liquido:{liquido}");
+            WriteLine("");
             WriteLine($"Hora extra: {extra}");
             WriteLine($"Adicional(is): {vrAdicional}");
-            WriteLine($"Salario bruto: {Bruto}");
+            WriteLine("");
             WriteLine($"Base de calculo do INSS:{Bruto}");
             WriteLine($"INSS: {INSS}");
             WriteLine($"Base de calculo do IRF:{BaseIRF}");
             WriteLine($"FGTS:{FGTS}");
             WriteLine($"IRF: {IRF}");
-            WriteLine($"Salario liquido:{liquido}");
+            WriteLine("");
+            WriteLine($"Adiantamento de salario:{adiantamento}");
+            WriteLine($"Paagamento:{pagamento}");
+
+
 
 
         }
